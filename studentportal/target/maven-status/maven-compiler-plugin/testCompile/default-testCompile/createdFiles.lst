@@ -1,0 +1,12 @@
+com\narayanjoshi\lbu\sesc\studentportal\unittest\service\EnrollServiceTest.class
+com\narayanjoshi\lbu\sesc\studentportal\unittest\util\AuthenticateUtilTest.class
+com\narayanjoshi\lbu\sesc\studentportal\StudentportalApplicationTests.class
+com\narayanjoshi\lbu\sesc\studentportal\unittest\doa\EnrollDoaTest.class
+com\narayanjoshi\lbu\sesc\studentportal\integrationtest\controller\CourseControllerTest.class
+com\narayanjoshi\lbu\sesc\studentportal\integrationtest\controller\PortalControllerTest.class
+com\narayanjoshi\lbu\sesc\studentportal\integrationtest\controller\EnrollControllerTest.class
+com\narayanjoshi\lbu\sesc\studentportal\unittest\doa\CourseDoaTest.class
+com\narayanjoshi\lbu\sesc\studentportal\unittest\doa\StudentDoaTest.class
+com\narayanjoshi\lbu\sesc\studentportal\integrationtest\controller\StudentControllerTest.class
+com\narayanjoshi\lbu\sesc\studentportal\unittest\service\CourseServiceTest.class
+com\narayanjoshi\lbu\sesc\studentportal\unittest\service\StudentServiceTest.class

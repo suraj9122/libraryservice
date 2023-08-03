@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Portal - Profile Update</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+
+	<div th:replace="fragments/header.html"></div>
+<main id="main" class="main">
+	<div class="container mt-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-10">
+
+				<h2>Student Profile Update</h2>
+				<div th:if="${param.success_msg != null}" class="alert alert-success" role="alert" th:text="${param.success_msg}">
+				</div>
+				<div th:if="${param.error_msg != null}" class="alert alert-danger" role="alert" th:text="${param.error_msg}">
+				</div>
+				<div>
+					<form class="needs-validation" action="#" th:action="@{/profile}"
+						th:object="${student}" method="post" novalidate>
+
+						<div class="mb-3">
+							<label for="fullname" class="form-label">Full name</label> <input
+								type="text" class="form-control" id="fullname"
+								th:field="${student.fullname}" required>
+							<div class="invalid-feedback">Please enter your fullname.</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="mobilenumber" class="form-label">Mobile
+								number</label> <input type="number" class="form-control"
+								id="mobilenumber" th:field="${student.mobileNumber}" required>
+							<div class="invalid-feedback">Please enter your mobile
+								number.</div>
+						</div>
+						<div class="mb-3">
+							<label for="homeaddress" class="form-label">Home address</label>
+							<input type="text" class="form-control" id="homeaddress"
+								th:field="${student.homeAddress}">
+							<div class="invalid-feedback">Please enter your
+								homeaddress.</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="emailaddress" class="form-label">Email
+								address</label> <input type="email" class="form-control"
+								id="emailaddress" th:field="${student.email}" required>
+							<div class="invalid-feedback">Please enter your email.</div>
+						</div>
+						<div class="mb-3">
+							<label for="username" class="form-label">Username</label> <input
+								type="text" class="form-control" id="username"
+								th:field="${student.username}" required>
+							<div class="invalid-feedback">Please enter your username.</div>
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">Password</label> <input
+								type="password" class="form-control" id="password"
+								th:field="${student.password}">
+							<div id="emailHelp" class="form-text">Only fill this if you
+								want to change your password.</div>
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">Student Id</label> <input
+								class="form-control" th:field="${student.studentId}" disabled>
+						</div>
+						<button type="submit" class="btn btn-primary">Update</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+	<div th:replace="fragments/footer.html"></div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../static/js/main.js"></script>
+</body>
+</html>

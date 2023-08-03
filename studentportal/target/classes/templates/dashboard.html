@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student Portal - Dashboard</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+		  rel="stylesheet"
+		  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+		  crossorigin="anonymous">
+
+	<link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+
+<div th:replace="fragments/header.html"></div>
+
+<main id="main" class="main">
+	<div class="container mt-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-12">
+				<h2>Dashboard</h2>
+				<p class="card-text">
+					Hello <span sec:authentication="principal.fullname"></span>,
+					Welcome to the student portal. Here are some operations you can perform:
+				</p>
+
+				<div class="row">
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">View Your Profile</h5>
+								<p class="card-text">Access and review your profile information.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Update Your Profile</h5>
+								<p class="card-text">Modify and update your profile details.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">View Available Courses</h5>
+								<p class="card-text">Explore through the list of available courses.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Enroll into Course</h5>
+								<p class="card-text">Enroll yourself into a course of your choice.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">View Enrollments</h5>
+								<p class="card-text">See a list of courses you have enrolled in.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">View Graduation Status</h5>
+								<p class="card-text">Check your progress and graduation status.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- End #main -->
+
+<div th:replace="fragments/footer.html"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
