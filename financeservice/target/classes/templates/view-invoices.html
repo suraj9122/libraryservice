@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Portal - All Invoices</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+	<div th:replace="fragments/header.html"></div>
+
+<main id="main" class="main">
+	<div class="container mt-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-6">
+			<form action="#" th:action="@{/invoices}" method="GET" novalidate>
+				<div class="input-group mb-3">
+				 
+				
+					<input type="text" class="form-control"
+						placeholder="Place reference id here" aria-describedby="button-addon2" name="reference_id" required>
+					<button class="btn btn-outline-secondary" type="submit"
+						id="button-addon2">Search By Reference Id</button>
+				
+				</div>
+				</form>
+			</div>
+			<div class="col-md-6">
+			<form action="#" th:action="@{/invoices}" method="GET" novalidate>
+				<div class="input-group mb-3">
+				
+					<input type="text" class="form-control"
+						placeholder="Place student id here" aria-describedby="button-addon2" name="student_id" required>
+					<button class="btn btn-outline-secondary" type=""submit""
+						id="button-addon2">Search By Student Id</button>
+				
+				</div>
+				</form>
+			</div>
+
+
+		</div>
+		<div class="col-md-12">
+			<h2>Your Invoices</h2>
+			<h2>Please Pay them to Graduate</h2>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th scope="col">Reference Id</th>
+						<th scope="col">Type</th>
+						<th scope="col">Amount</th>
+						<th scope="col">Due Date</th>
+						<th scope="col">Status</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="invoice : ${invoices}">
+						<th scope="row" th:text="${invoice.referenceId}"></th>
+						<td th:text="${invoice.paymentType}"></td>
+						<td th:text="'&#163;' + ${invoice.amount}"></td>
+						<td th:text="${invoice.dueDate}"></td>
+						<td th:text="${invoice.status}"></td>
+						<td>
+							<div th:if="${#strings.equals(invoice.status, 'OUTSTANDING')}">
+								<a class="btn btn-info"
+								   th:href="@{invoice/pay/{referenceId}(referenceId = ${invoice.referenceId})}"
+								   role="button">Pay</a>
+							</div>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</main>
+		<div th:replace="fragments/footer.html"></div>
+	
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+</body>
+</html>
